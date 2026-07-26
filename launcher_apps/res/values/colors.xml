@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TeamOS 3.0 - Android 16 + One UI 8 -->
+    <color name="teamos_primary">#3B82F6</color>
+    <color name="teamos_primary_dark">#2563EB</color>
+    <color name="teamos_secondary">#8B5CF6</color>
+    <color name="teamos_background">#0B1220</color>
+    <color name="teamos_surface">#0F172A</color>
+    <color name="teamos_surface_variant">#1E293B</color>
+    <color name="teamos_on_surface">#F8FAFC</color>
+    <color name="teamos_on_surface_variant">#94A3B8</color>
+    <color name="teamos_outline">#334155</color>
+    <color name="teamos_tile_active">#3B82F659</color>
+    <color name="teamos_tile_inactive">#FFFFFF14</color>
+    <color name="teamos_white">#FFFFFF</color>
+    <color name="teamos_black">#000000</color>
+    <color name="teamos_success">#22C55E</color>
+    <color name="teamos_danger">#EF4444</color>
+</resources>
