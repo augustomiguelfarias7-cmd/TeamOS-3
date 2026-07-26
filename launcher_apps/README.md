@@ -1,24 +1,39 @@
 # Launcher & Apps - TeamOS 3.0
 
-Interface principal inspirada no **Android 16 (Material 3 Expressive)** + estilo **One UI / Samsung**.
+Interface completa inspirada no **Android 16 (Material 3 Expressive)** + estilo **One UI / Samsung**.
 
-## Características da interface
+## Fluxo de primeira inicialização (Onboarding)
 
-- Quick Settings / painel de notificações com tiles redimensionáveis
-- Blur / efeito de vidro fosco (frosted glass)
-- Animações mais “springy”
-- Cores dinâmicas (Material You)
-- Bordas bem arredondadas (estilo One UI)
-- Adaptação de tela (rotação)
-- Lock / Unlock
-- Toggles: Wi-Fi, Dados móveis, Bluetooth, Modo Avião, Lanterna, Não perturbar, Localização, Brilho, etc.
+1. `onboarding/welcome.html` → Tela de boas-vindas + botão **Seguir**
+2. `onboarding/language.html` → Seleção de idioma (11 idiomas)
+3. `onboarding/wifi.html` → Configuração de rede Wi-Fi
+4. Depois entra no launcher principal
 
-## Estrutura
+## Launcher principal
 
-- `launcher/` → Tela inicial + Quick Settings + Lockscreen
-- `apps/` → Apps do sistema (Galeria, etc.)
-- `webview-apps/` → Apps baseados em WebView (ChatGPT, Gemini, etc.)
+- `launcher/home.html` → Tela inicial completa
+  - Status bar
+  - Relógio grande
+  - Grade de apps
+  - Dock inferior
+  - **Quick Settings Panel** (deslize do topo para baixo ou clique na status bar)
 
-## Estilo visual
+### Quick Settings inclui:
+- Brilho (slider)
+- Wi-Fi
+- Dados móveis
+- Bluetooth
+- Modo Avião
+- Lanterna
+- Não perturbar
+- Localização
+- Rotação de tela
 
-Seguindo a linha do Android 16 Material 3 Expressive combinado com a estética limpa e arredondada da One UI da Samsung.
+## Apps
+
+- `apps/gallery/` → App de imagens
+
+## Como testar
+
+Abra os arquivos HTML no navegador (celular ou PC).  
+Comece por: `onboarding/welcome.html`
