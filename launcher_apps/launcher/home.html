@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TeamOS 3.0 - Launcher</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'Roboto', system-ui, sans-serif;
+      background: #0b1220 url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800') center/cover no-repeat;
+      color: #f8fafc;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Status bar */
+    .status-bar {
+      height: 28px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+      background: transparent;
+    }
+    /* Home content */
+    .home {
+      height: calc(100vh - 28px - 64px);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .clock {
+      font-size: 64px;
+      font-weight: 300;
+      letter-spacing: -2px;
+      margin-top: 40px;
+    }
+    .date { font-size: 16px; color: #cbd5e1; margin-bottom: 40px; }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px 12px;
+      margin-top: auto;
+    }
+    .app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .app-name { font-size: 11px; color: #e2e8f0; text-align: center; }
+    /* Dock */
+    .dock {
+      height: 64px;
+      margin: 0 16px 16px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(24px);
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .dock .app-icon { width: 48px; height: 48px; font-size: 22px; border-radius: 14px; }
+
+    /* ========== QUICK SETTINGS PANEL ========== */
+    .qs-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      z-index: 90;
+    }
+    .qs-overlay.open { opacity: 1; pointer-events: auto; }
+    .qs-panel {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(40px);
+      border-radius: 0 0 28px 28px;
+      padding: 12px 16px 24px;
+      transform: translateY(-110%);
+      transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .qs-panel.open { transform: translateY(0); }
+    .qs-handle {
+      width: 36px; height: 4px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 99px;
+      margin: 0 auto 16px;
+    }
+    .qs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .brightness {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brightness input[type=range] { flex: 1; accent-color: #3b82f6; }
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .tile {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 14px 8px;
+      text-align: center;
+      font-size: 11px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.15s;
+    }
+    .tile.active {
+      background: rgba(59, 130, 246, 0.35);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+    .tile .ico { font-size: 22px; margin-bottom: 6px; }
+    .tile-label { color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span id="time-top">12:00</span>
+    <span>📶 🔋 85%</span>
+  </div>
+
+  <!-- Home -->
+  <div class="home">
+    <div class="clock" id="clock">12:00</div>
+    <div class="date" id="date">Domingo, 26 de julho</div>
+
+    <div class="apps-grid">
+      <div class="app"><div class="app-icon">🌐</div><div class="app-name">Firefox</div></div>
+      <div class="app"><div class="app-icon">🖼️</div><div class="app-name">Galeria</div></div>
+      <div class="app"><div class="app-icon">⚙️</div><div class="app-name">Ajustes</div></div>
+      <div class="app"><div class="app-icon">🤖</div><div class="app-name">ChatGusto</div></div>
+      <div class="app"><div class="app-icon">💬</div><div class="app-name">Mensagens</div></div>
+      <div class="app"><div class="app-icon">📞</div><div class="app-name">Telefone</div></div>
+      <div class="app"><div class="app-icon">📁</div><div class="app-name">Arquivos</div></div>
+      <div class="app"><div class="app-icon">🛒</div><div class="app-name">Loja</div></div>
+    </div>
+  </div>
+
+  <!-- Dock -->
+  <div class="dock">
+    <div class="app-icon">📞</div>
+    <div class="app-icon">💬</div>
+    <div class="app-icon">🌐</div>
+    <div class="app-icon">📷</div>
+  </div>
+
+  <!-- Quick Settings -->
+  <div class="qs-overlay" id="overlay" onclick="closeQS()"></div>
+  <div class="qs-panel" id="qs">
+    <div class="qs-handle"></div>
+    <div class="qs-header">
+      <span>TeamOS Quick Panel</span>
+      <span>Android 16 style</span>
+    </div>
+    <div class="brightness">
+      <span>☀️</span>
+      <input type="range" min="0" max="100" value="70">
+    </div>
+    <div class="tiles">
+      <div class="tile active" onclick="this.classList.toggle('active')"><div class="ico">📶</div><div class="tile-label">Wi-Fi</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">📡</div><div class="tile-label">Dados</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">🔵</div><div class="tile-label">Bluetooth</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">✈️</div><div class="tile-label">Avião</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">🔦</div><div class="tile-label">Lanterna</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">🌙</div><div class="tile-label">Não perturbar</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">📍</div><div class="tile-label">Localização</div></div>
+      <div class="tile" onclick="this.classList.toggle('active')"><div class="ico">🔄</div><div class="tile-label">Rotação</div></div>
+    </div>
+  </div>
+
+  <script>
+    // Relógio
+    function updateClock() {
+      const now = new Date();
+      const t = now.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+      document.getElementById('clock').textContent = t;
+      document.getElementById('time-top').textContent = t;
+      document.getElementById('date').textContent = now.toLocaleDateString('pt-BR', {weekday:'long', day:'numeric', month:'long'});
+    }
+    updateClock();
+    setInterval(updateClock, 10000);
+
+    // Swipe down para abrir Quick Settings
+    let startY = 0;
+    document.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, {passive:true});
+    document.addEventListener('touchend', e => {
+      const endY = e.changedTouches[0].clientY;
+      if (startY < 40 && endY - startY > 60) openQS();
+    }, {passive:true});
+
+    // Também permite clicar no topo
+    document.querySelector('.status-bar').addEventListener('click', openQS);
+
+    function openQS() {
+      document.getElementById('qs').classList.add('open');
+      document.getElementById('overlay').classList.add('open');
+    }
+    function closeQS() {
+      document.getElementById('qs').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+  </script>
+</body>
+</html>
