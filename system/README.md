@@ -2,34 +2,35 @@
 
 Esta pasta contém os scripts reais de build do TeamOS 3.0.
 
-Os scripts baixam e preparam a infraestrutura do Linux (kernel + componentes básicos) a partir das fontes oficiais.
+A ideia é baixar a **parte mais difícil** da infraestrutura Linux (kernel, firmware/drivers, componentes de baixo nível e alguns pacotes pesados).  
+A parte mais fácil (interface final, loja WebView, ChatGusto, etc.) será desenvolvida de forma independente pelo TeamOS.
+
+## O que os scripts baixam
+
+- Kernel Linux (oficial)
+- Linux Firmware (drivers de hardware)
+- BusyBox (userspace mínimo)
+- PCManFM (gerenciador de arquivos leve)
+- Componentes base de sistema
 
 ## Requisitos
 
-- Sistema Linux (Ubuntu/Debian recomendado)
-- `wget` ou `curl`
-- `git`
-- `make`, `gcc`, `bc`, `flex`, `bison`, `libssl-dev`, `libelf-dev` (para compilar o kernel)
+- Linux (Ubuntu/Debian recomendado)
+- `wget`, `git`, `make`, `gcc` e dependências de compilação
 
 ## Como usar
 
 ```bash
 cd system
 chmod +x *.sh
-./download-kernel.sh
-./prepare-build.sh
+./build.sh
 ```
 
-Depois de baixar, você pode compilar o kernel com:
+## Estrutura dos scripts
 
-```bash
-cd linux
-make menuconfig   # ou defconfig
-make -j$(nproc)
-```
-
-## Estrutura
-
-- `download-kernel.sh` → Baixa o kernel Linux oficial
-- `prepare-build.sh` → Prepara o ambiente e dependências básicas
-- `build-rootfs.sh` → (futuro) Cria o sistema de arquivos raiz mínimo
+- `build.sh` → Script principal (roda tudo)
+- `download-kernel.sh` → Kernel Linux
+- `download-firmware.sh` → Firmware/drivers
+- `download-busybox.sh` → BusyBox
+- `download-filemanager.sh` → Gerenciador de arquivos (PCManFM)
+- `prepare-build.sh` → Instala dependências de compilação
