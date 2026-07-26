@@ -29,14 +29,3 @@ Exemplos de apps planejados:
 - GitHub
 - E mais de 200 outros
 
-## Status
-
-Projeto em fase inicial de planejamento e desenvolvimento.
-
-## Licença
-
-Open Source (licença a definir)
-
----
-
-Desenvolvido com ❤️
