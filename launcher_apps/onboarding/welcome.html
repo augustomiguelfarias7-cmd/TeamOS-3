@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TeamOS 3.0 - Boas-vindas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+    .logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.35);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      color: #94a3b8;
+      text-align: center;
+      max-width: 320px;
+      line-height: 1.5;
+      margin-bottom: 48px;
+    }
+    .btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 16px 48px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.15s;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+    }
+    .btn:active { transform: scale(0.96); background: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="logo">T</div>
+  <h1>Bem-vindo ao TeamOS 3.0</h1>
+  <p>Um sistema operacional mobile open source. Vamos configurar seu dispositivo.</p>
+  <button class="btn" onclick="location.href='language.html'">Seguir</button>
+</body>
+</html>
