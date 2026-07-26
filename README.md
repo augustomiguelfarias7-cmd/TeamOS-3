@@ -4,16 +4,15 @@
 
 ## Visão Geral
 
-TeamOS 3.0 é um sistema operacional mobile/desktop com:
+TeamOS 3.0 é um sistema operacional mobile com:
 
 - Kernel Linux + drivers (reaproveitados)
 - Interface gráfica própria
 - Loja de aplicativos baseada em WebView (sites tratados como apps)
-- Navegadores: Firefox (principal) + Chromium
-- Assistente virtual ChatGusto (OpenRouter + geração de imagens)
+- Navegadores: Firefox
+- Assistente virtual ChatGusto 
 - App de Configurações próprio
 - Loja de papéis de parede
-- Sem sistema de login de usuário
 
 ## Apps da Loja (WebView)
 
