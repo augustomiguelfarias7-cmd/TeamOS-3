@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        TeamOS 3.0 Theme
+        Mistura: Android 16 Material 3 Expressive + One UI 8
+    -->
+    <style name="Theme.TeamOS" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Cores principais (Material You dinâmico depois) -->
+        <item name="colorPrimary">#3B82F6</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#8B5CF6</item>
+        <item name="colorSurface">#0F172A</item>
+        <item name="colorOnSurface">#F8FAFC</item>
+
+        <!-- One UI style: cantos bem arredondados -->
+        <item name="shapeAppearanceSmallComponent">@style/Shape.TeamOS.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.TeamOS.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.TeamOS.Large</item>
+
+        <!-- Status bar transparente (estilo moderno) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Shape.TeamOS.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Shape.TeamOS.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="Shape.TeamOS.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+</resources>
