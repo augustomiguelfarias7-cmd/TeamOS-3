@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- One UI 8 + Android 16 spacing -->
+    <dimen name="teamos_corner_small">12dp</dimen>
+    <dimen name="teamos_corner_medium">18dp</dimen>
+    <dimen name="teamos_corner_large">28dp</dimen>
+    <dimen name="teamos_corner_pill">999dp</dimen>
+    <dimen name="teamos_padding">20dp</dimen>
+    <dimen name="teamos_padding_small">12dp</dimen>
+    <dimen name="teamos_app_icon">56dp</dimen>
+    <dimen name="teamos_dock_icon">48dp</dimen>
+    <dimen name="teamos_tile_size">72dp</dimen>
+    <dimen name="teamos_status_bar">28dp</dimen>
+    <dimen name="teamos_dock_height">72dp</dimen>
+</resources>
