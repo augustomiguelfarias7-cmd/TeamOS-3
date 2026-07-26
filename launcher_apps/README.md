@@ -1,39 +1,40 @@
 # Launcher & Apps - TeamOS 3.0
 
-Interface completa inspirada no **Android 16 (Material 3 Expressive)** + estilo **One UI / Samsung**.
+Interface **nativa Android** (Kotlin + XML)  
+Visual: mistura de **Android 16 (Material 3 Expressive / Pixel)** + **One UI 8 (Samsung)**
 
-## Fluxo de primeira inicialização (Onboarding)
+## Estrutura
 
-1. `onboarding/welcome.html` → Tela de boas-vindas + botão **Seguir**
-2. `onboarding/language.html` → Seleção de idioma (11 idiomas)
-3. `onboarding/wifi.html` → Configuração de rede Wi-Fi
-4. Depois entra no launcher principal
+```
+launcher_apps/
+├── onboarding/          # Primeira inicialização (Kotlin)
+├── launcher/            # Tela inicial + Quick Settings
+├── apps/                # Apps nativos do sistema
+│   ├── gallery/
+│   ├── camera/
+│   ├── store/           # Loja de apps (WebView)
+│   └── settings/
+├── navigator/           # Navegadores
+│   ├── download-firefox.sh
+│   └── teamos-browser/  # Navegador próprio (WebView + abas)
+└── res/                 # Temas, cores, estilos (One UI 8 + Android 16)
+```
 
-## Launcher principal
+## Apps nativos (open source)
 
-- `launcher/home.html` → Tela inicial completa
-  - Status bar
-  - Relógio grande
-  - Grade de apps
-  - Dock inferior
-  - **Quick Settings Panel** (deslize do topo para baixo ou clique na status bar)
+- Galeria
+- Câmera
+- Loja de apps
+- Configurações
+- Navegador próprio (WebView com abas)
+- Firefox (baixado via script em navigator/)
 
-### Quick Settings inclui:
-- Brilho (slider)
-- Wi-Fi
-- Dados móveis
-- Bluetooth
-- Modo Avião
-- Lanterna
-- Não perturbar
-- Localização
-- Rotação de tela
+## Não incluído na base open source
 
-## Apps
+- ChatGusto e partes de IA (permanecem fechadas)
 
-- `apps/gallery/` → App de imagens
+## Estilo visual
 
-## Como testar
-
-Abra os arquivos HTML no navegador (celular ou PC).  
-Comece por: `onboarding/welcome.html`
+- Material 3 Expressive (Android 16 Pixel)
+- One UI 8 (bordas arredondadas, hierarquia limpa, painéis modernos)
+- Cores dinâmicas, blur, animações modernas
