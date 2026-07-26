@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TeamOS 3.0 - Wi-Fi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', system-ui, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      padding: 48px 20px 100px;
+    }
+    h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+    .sub { color: #94a3b8; font-size: 14px; margin-bottom: 28px; }
+    .network {
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .network:active, .network.connected {
+      border-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+    }
+    .icon { font-size: 22px; }
+    .info { flex: 1; }
+    .name { font-size: 16px; font-weight: 500; }
+    .status { font-size: 13px; color: #64748b; }
+    .btn-area { position: fixed; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, #0f172a 40%); display: flex; gap: 12px; }
+    .btn {
+      flex: 1; padding: 16px; border-radius: 999px; font-size: 15px; font-weight: 600;
+      border: none; cursor: pointer;
+    }
+    .btn-primary { background: #3b82f6; color: white; }
+    .btn-secondary { background: rgba(148, 163, 184, 0.15); color: #e2e8f0; }
+  </style>
+</head>
+<body>
+  <h1>Conectar à rede</h1>
+  <p class="sub">Selecione uma rede Wi-Fi para continuar</p>
+
+  <div class="network" onclick="select(this)">
+    <div class="icon">📶</div>
+    <div class="info"><div class="name">Casa_5G</div><div class="status">Protegida · Excelente</div></div>
+  </div>
+  <div class="network" onclick="select(this)">
+    <div class="icon">📶</div>
+    <div class="info"><div class="name">WiFi_Vizinho</div><div class="status">Protegida · Boa</div></div>
+  </div>
+  <div class="network" onclick="select(this)">
+    <div class="icon">📶</div>
+    <div class="info"><div class="name">Cafe_Free</div><div class="status">Aberta · Fraca</div></div>
+  </div>
+  <div class="network" onclick="select(this)">
+    <div class="icon">📶</div>
+    <div class="info"><div class="name">TeamOS_Guest</div><div class="status">Protegida · Excelente</div></div>
+  </div>
+
+  <div class="btn-area">
+    <button class="btn btn-secondary" onclick="location.href='../launcher/home.html'">Pular</button>
+    <button class="btn btn-primary" onclick="location.href='../launcher/home.html'">Continuar</button>
+  </div>
+
+  <script>
+    function select(el) {
+      document.querySelectorAll('.network').forEach(n => n.classList.remove('connected'));
+      el.classList.add('connected');
+      el.querySelector('.status').textContent = 'Conectado';
+    }
+  </script>
+</body>
+</html>
