@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Dark Background Hexagon Shield -->
+    <path
+        android:fillColor="#0E131F"
+        android:strokeColor="#00F0FF"
+        android:strokeWidth="3"
+        android:pathData="M 54,8 L 94,31 L 94,77 L 54,100 L 14,77 L 14,31 Z" />
+    <!-- Outer Orbit Circle (Glow Line) -->
+    <path
+        android:strokeColor="#D000FF"
+        android:strokeWidth="2"
+        android:pathData="M 54,54 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
+    <!-- TeamOS Cyan T Logo -->
+    <path
+        android:fillColor="#00F0FF"
+        android:pathData="M 44,38 L 64,38 L 64,44 L 57,44 L 57,70 L 51,70 L 51,44 L 44,44 Z" />
+</vector>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.teamos.launcher.BubbleTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_bubble_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="6dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackgroundBorderless">
+
+    <!-- Frame/Glow wrapper -->
+    <FrameLayout
+        android:id="@+id/icon_frame_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center">
+
+        <!-- Glowing Aura/Shadow behind the icon -->
+        <View
+            android:id="@+id/icon_glow_aura"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_hexagon"
+            android:alpha="0.0" />
+
+        <!-- Framed Icon View -->
+        <ImageView
+            android:id="@+id/icon_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop" />
+
+        <!-- Border Overlay for futuristic effect -->
+        <ImageView
+            android:id="@+id/icon_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <!-- App Label Text -->
+    <TextView
+        android:id="@+id/app_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="11sp"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#E0000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.5"
+        android:shadowRadius="2"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center_horizontal" />
+
+</com.teamos.launcher.BubbleTextView>

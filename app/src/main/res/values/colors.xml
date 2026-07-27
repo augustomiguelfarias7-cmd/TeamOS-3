@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cyber Neon Accents -->
+    <color name="cyan_neon">#00F0FF</color>
+    <color name="purple_neon">#D000FF</color>
+    <color name="magenta_neon">#FF0055</color>
+    <color name="glass_border_cyan">#4D00F0FF</color>
+    <color name="glass_border_purple">#4DD000FF</color>
+    <color name="glass_border_white">#4DFFFFFF</color>
+
+    <!-- Dark Theme (Cyber Dark) Colors -->
+    <color name="dark_bg">#070A0F</color>
+    <color name="dark_card_bg">#C0121620</color>
+    <color name="dark_panel_bg">#E00E121A</color>
+    <color name="dark_text_primary">#FFFFFF</color>
+    <color name="dark_text_secondary">#8C99B0</color>
+    <color name="dark_glow">#00F0FF</color>
+
+    <!-- Light Theme (Aero Light) Colors -->
+    <color name="light_bg">#F0F4F8</color>
+    <color name="light_card_bg">#D8FDFDFD</color>
+    <color name="light_panel_bg">#F2EFF5FA</color>
+    <color name="light_text_primary">#0E1726</color>
+    <color name="light_text_secondary">#5C6A80</color>
+    <color name="light_glow">#D000FF</color>
+
+    <!-- Shared/Common Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#33000000</color>
+    <color name="search_bg_dark">#26FFFFFF</color>
+    <color name="search_bg_light">#15000000</color>
+</resources>

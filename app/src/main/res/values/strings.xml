@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aero Launcher</string>
+    <string name="settings_name">Aero Configurações</string>
+    <string name="title_launcher_settings">Configurações do TeamOS Aero Launcher</string>
+    <string name="pref_grid_size">Tamanho da Grade</string>
+    <string name="pref_grid_size_summary">Escolha o número de colunas e linhas na tela inicial</string>
+    <string name="pref_icon_shape">Formato dos Ícones</string>
+    <string name="pref_icon_shape_summary">Escolha a moldura geométrica dos ícones de apps</string>
+    <string name="pref_theme">Tema da Interface</string>
+    <string name="pref_theme_summary">Altere entre tema Claro, Escuro ou Automático</string>
+    <string name="pref_glow_effect">Efeito Glow Neon</string>
+    <string name="pref_glow_effect_summary">Adicione brilho neon ao redor dos ícones e cartões</string>
+    <string name="search_hint">Procurar apps ou perguntar ao ChatGusto...</string>
+    <string name="no_apps_found">Nenhum aplicativo encontrado</string>
+    <string name="add_widget">Adicionar Widget</string>
+    <string name="remove_shortcut">Remover Atalho</string>
+    <string name="theme_light">Claro (Aero Light)</string>
+    <string name="theme_dark">Escuro (Cyber Dark)</string>
+    <string name="theme_system">Seguir Sistema</string>
+    <string name="shape_hexagon">Hexágono Futurista</string>
+    <string name="shape_squircle">Squircle Moderno</string>
+    <string name="shape_circle">Círculo Minimalista</string>
+    <string name="shape_none">Nenhum (Ícone Original)</string>
+    <string name="about_title">Sobre o Aero Launcher 3.0</string>
+    <string name="about_summary">Desenvolvido com exclusividade para o TeamOS 3.0. Interface futurista, rápida e fluida.</string>
+</resources>
