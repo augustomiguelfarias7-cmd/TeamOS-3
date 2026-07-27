@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Glowing Chat Bubble Base -->
+    <path
+        android:fillColor="#00F0FF"
+        android:pathData="M20,2H4C2.9,2 2,2.9 2,4v18l4-4h14c1.1,0 2,-0.9 2,-2V4C22,2.9 21.1,2 20,2z" />
+    <!-- Cyber Core Eyes/Lines inside -->
+    <path
+        android:fillColor="#070A0F"
+        android:pathData="M6,9 L18,9 L18,11 L6,11 Z M6,13 L14,13 L14,15 L6,15 Z" />
+</vector>
